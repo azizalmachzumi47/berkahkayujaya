@@ -1,0 +1,561 @@
+{
+	"openapi": "3.0.0",
+	"info": {
+		"title": "API Berkah Kayu",
+		"description": "Dokumentasi API untuk Berkah Kayu",
+		"version": "1.0.0"
+	},
+	"servers": [
+		{
+			"url": "http://localhost/berkahkayujaya/api",
+			"description": "Local server"
+		}
+	],
+	"paths": {
+		"/kayuapi": {
+			"get": {
+				"summary": "Ambil semua data kayu",
+				"tags": ["Kayu"],
+				"responses": {
+					"200": {
+						"description": "Berhasil",
+						"content": {
+							"application/json": {
+								"example": [
+									{
+										"id_kayu": 1,
+										"jenis_kayu": "Jati",
+										"stok": 100
+									}
+								]
+							}
+						}
+					}
+				}
+			}
+		},
+		"/kayuapi/{id_kayu}": {
+			"get": {
+				"summary": "Ambil data kayu berdasarkan ID",
+				"tags": ["Kayu"],
+				"parameters": [
+					{
+						"name": "id_kayu",
+						"in": "path",
+						"required": true,
+						"description": "ID kayu",
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Berhasil",
+						"content": {
+							"application/json": {
+								"example": {
+									"id_kayu": 1,
+									"jenis_kayu": "Jati",
+									"stok": 100
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Data tidak ditemukan"
+					}
+				}
+			}
+		},
+		"/kayuapi/store": {
+			"post": {
+				"summary": "Tambah data kayu",
+				"tags": ["Kayu"],
+				"requestBody": {
+					"description": "Data kayu baru",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"jenis_kayu": {
+										"type": "string",
+										"example": "Jati"
+									},
+									"stok": {
+										"type": "integer",
+										"example": 100
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"201": {
+						"description": "Data berhasil ditambahkan"
+					}
+				}
+			}
+		},
+		"/kayuapi/update/{id_kayu}": {
+			"put": {
+				"summary": "Update data kayu berdasarkan ID",
+				"tags": ["Kayu"],
+				"parameters": [
+					{
+						"name": "id_kayu",
+						"in": "path",
+						"required": true,
+						"description": "ID kayu",
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"requestBody": {
+					"description": "Data kayu yang akan diperbarui",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"jenis_kayu": {
+										"type": "string",
+										"example": "Jati Baru"
+									},
+									"stok": {
+										"type": "integer",
+										"example": 120
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Data berhasil diperbarui"
+					},
+					"404": {
+						"description": "Data tidak ditemukan"
+					}
+				}
+			}
+		},
+		"/kayuapi/delete/{id_kayu}": {
+			"delete": {
+				"summary": "Hapus data kayu berdasarkan ID",
+				"tags": ["Kayu"],
+				"parameters": [
+					{
+						"name": "id_kayu",
+						"in": "path",
+						"required": true,
+						"description": "ID kayu",
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Data berhasil dihapus"
+					},
+					"404": {
+						"description": "Data tidak ditemukan"
+					}
+				}
+			}
+		},
+		"/pesanankayuapi": {
+			"get": {
+				"summary": "Ambil semua data pesanan kayu",
+				"tags": ["Pesanan"],
+				"responses": {
+					"200": {
+						"description": "Berhasil",
+						"content": {
+							"application/json": {
+								"example": [
+									{
+										"id_pesanan": 1,
+										"jenis_pesanan": "Pesanan Jati",
+										"jumlah": 500
+									}
+								]
+							}
+						}
+					}
+				}
+			}
+		},
+		"/pesanankayuapi/{id_pesanan}": {
+			"get": {
+				"summary": "Ambil data pesanan kayu berdasarkan ID",
+				"tags": ["Pesanan"],
+				"parameters": [
+					{
+						"name": "id_pesanan",
+						"in": "path",
+						"required": true,
+						"description": "ID pesanan kayu",
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Berhasil",
+						"content": {
+							"application/json": {
+								"example": {
+									"id_pesanan": 1,
+									"jenis_pesanan": "Pesanan Jati",
+									"jumlah": 500
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Data tidak ditemukan"
+					}
+				}
+			}
+		},
+		"/pesanankayuapi/store": {
+			"post": {
+				"summary": "Tambah data pesanan kayu",
+				"tags": ["Pesanan"],
+				"requestBody": {
+					"description": "Data pesanan kayu baru",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"jenis_pesanan": {
+										"type": "string",
+										"example": "Pesanan Jati"
+									},
+									"jumlah": {
+										"type": "integer",
+										"example": 500
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"201": {
+						"description": "Data pesanan berhasil ditambahkan"
+					}
+				}
+			}
+		},
+		"/pesanankayuapi/update/{id_pesanan}": {
+			"put": {
+				"summary": "Update data pesanan kayu berdasarkan ID",
+				"tags": ["Pesanan"],
+				"parameters": [
+					{
+						"name": "id_pesanan",
+						"in": "path",
+						"required": true,
+						"description": "ID pesanan kayu",
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"requestBody": {
+					"description": "Data pesanan kayu yang akan diperbarui",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"jenis_pesanan": {
+										"type": "string",
+										"example": "Pesanan Jati Baru"
+									},
+									"jumlah": {
+										"type": "integer",
+										"example": 600
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Data pesanan berhasil diperbarui"
+					},
+					"404": {
+						"description": "Data pesanan tidak ditemukan"
+					}
+				}
+			}
+		},
+		"/pesanankayuapi/delete/{id_pesanan}": {
+			"delete": {
+				"summary": "Hapus data pesanan kayu berdasarkan ID",
+				"tags": ["Pesanan"],
+				"parameters": [
+					{
+						"name": "id_pesanan",
+						"in": "path",
+						"required": true,
+						"description": "ID pesanan kayu",
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Data pesanan berhasil dihapus"
+					},
+					"404": {
+						"description": "Data pesanan tidak ditemukan"
+					}
+				}
+			}
+		},
+		"/authapi/login": {
+			"post": {
+				"summary": "Login User",
+				"tags": ["Auth"],
+				"requestBody": {
+					"description": "Login credentials",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"username": {
+										"type": "string",
+										"example": "admin"
+									},
+									"password": {
+										"type": "string",
+										"example": "password123"
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Login berhasil",
+						"content": {
+							"application/json": {
+								"example": {
+									"token": "JWT_TOKEN"
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					}
+				}
+			}
+		},
+		"/authapi/register": {
+			"post": {
+				"summary": "Register User",
+				"tags": ["Auth"],
+				"requestBody": {
+					"description": "Data registrasi pengguna baru",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"username": {
+										"type": "string",
+										"example": "newuser"
+									},
+									"password": {
+										"type": "string",
+										"example": "newpassword123"
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"201": {
+						"description": "Pengguna berhasil terdaftar"
+					}
+				}
+			}
+		},
+		"/authapi/logout": {
+			"post": {
+				"summary": "Logout User",
+				"tags": ["Auth"],
+				"requestBody": {
+					"description": "Token untuk logout",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"token": {
+										"type": "string",
+										"example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImpvaG5kb2UiLCJyb2xlX2lkIjoiMiIsImlhdCI6MTczNjk5NjMyOSwiZXhwIjoxNzM2OTk5OTI5fQ.O9NEmpw08_1BB-0HXMZLqV5yf9LzQoVTu5RoS_yUv_M"
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Logout berhasil"
+					}
+				}
+			}
+		},
+		"/authapi": {
+			"get": {
+				"summary": "Ambil semua data user",
+				"tags": ["User"],
+				"responses": {
+					"200": {
+						"description": "Berhasil",
+						"content": {
+							"application/json": {
+								"example": [
+									{
+										"id": 1,
+										"username": "admin"
+									}
+								]
+							}
+						}
+					}
+				}
+			}
+		},
+		"/authapi/{id}": {
+			"get": {
+				"summary": "Ambil data user berdasarkan ID",
+				"tags": ["User"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"description": "ID user",
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Berhasil",
+						"content": {
+							"application/json": {
+								"example": {
+									"id": 1,
+									"username": "admin"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Data tidak ditemukan"
+					}
+				}
+			}
+		},
+		"/authapi/update/{id}": {
+			"put": {
+				"summary": "Update data user berdasarkan ID",
+				"tags": ["User"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"description": "ID user",
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"requestBody": {
+					"description": "Data user yang akan diperbarui",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"username": {
+										"type": "string",
+										"example": "newadmin"
+									},
+									"password": {
+										"type": "string",
+										"example": "newpassword123"
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Data user berhasil diperbarui"
+					},
+					"404": {
+						"description": "Data user tidak ditemukan"
+					}
+				}
+			}
+		},
+		"/authapi/delete/{id}": {
+			"delete": {
+				"summary": "Hapus data user berdasarkan ID",
+				"tags": ["User"],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"description": "ID user",
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Data user berhasil dihapus"
+					},
+					"404": {
+						"description": "Data user tidak ditemukan"
+					}
+				}
+			}
+		}
+	}
+}

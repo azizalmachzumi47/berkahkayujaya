@@ -1,0 +1,547 @@
+{
+	"info": {
+		"_postman_id": "80d17e9c-defc-4ad0-b077-24759e8f3106",
+		"name": "API Berkah Kayu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13356675"
+	},
+	"item": [
+		{
+			"name": "Menampilkan List Data Kayu",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/berkahkayujaya/api/kayuapi/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"berkahkayujaya",
+						"api",
+						"kayuapi",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Menampilkan List Data User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/berkahkayujaya/api/authapi/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"berkahkayujaya",
+						"api",
+						"authapi",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Menampilkan List Data Pesanan Kayu",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/berkahkayujaya/api/pesanankayuapi/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"berkahkayujaya",
+						"api",
+						"pesanankayuapi",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Menampilkan Data Pesanan Kayu",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/berkahkayujaya/api/pesanankayuapi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"berkahkayujaya",
+						"api",
+						"pesanankayuapi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Menampilkan Data Kayu",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/berkahkayujaya/api/kayuapi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"berkahkayujaya",
+						"api",
+						"kayuapi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Menampilkan Data User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/berkahkayujaya/api/authapi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"berkahkayujaya",
+						"api",
+						"authapi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Menambahkan Data Kayu",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"jenis_kayu\": \"Kayu Ulin\",\r\n  \"lebar_kayu\": \"25\",\r\n  \"tinggi_kayu\": \"30\",\r\n  \"harga_kayu\": \"250000\",\r\n  \"stok_kayu\": \"10\",\r\n  \"keterangan_kayu\": \"Kayu berkualitas tinggi\",\r\n  \"foto_kayu\": \"kayu_ulin.png\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/berkahkayujaya/api/kayuapi/store",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"berkahkayujaya",
+						"api",
+						"kayuapi",
+						"store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Menambahkan Data User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"johndoe\",\r\n    \"nama\": \"John Doe\",\r\n    \"email\": \"johndoe@example.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/berkahkayujaya/api/authapi/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"berkahkayujaya",
+						"api",
+						"authapi",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"johndoe\",\r\n    \"password\": \"123456\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/berkahkayujaya/api/authapi/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"berkahkayujaya",
+						"api",
+						"authapi",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImpvaG5kb2UiLCJyb2xlX2lkIjoiMiIsImlhdCI6MTczNjk5NjMyOSwiZXhwIjoxNzM2OTk5OTI5fQ.O9NEmpw08_1BB-0HXMZLqV5yf9LzQoVTu5RoS_yUv_M\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/berkahkayujaya/api/authapi/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"berkahkayujaya",
+						"api",
+						"authapi",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Menambahkan Data Pesanan Kayu",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id_kayu\": \"2 \",\r\n  \"nama_customer\": \"Igneel\",\r\n  \"tanggal_pesankayu\": \"2025-01-16\",\r\n  \"jumlah\": \"2\",\r\n  \"total_harga\": \"100000\",\r\n  \"keterangan\": \"Xyz\",\r\n  \"no_hp\": \"082111000789\",\r\n  \"alamat_pesanan\": \"Kota Bandung\",\r\n  \"is_read\": \"0\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/berkahkayujaya/api/pesanankayuapi/store",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"berkahkayujaya",
+						"api",
+						"pesanankayuapi",
+						"store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mengedit Data Kayu",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"harga_kayu\": \"300000\",\r\n  \"stok_kayu\": \"8\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/berkahkayujaya/api/kayuapi/update/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"berkahkayujaya",
+						"api",
+						"kayuapi",
+						"update",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mengedit Data User",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"role_id\": \"0\",\r\n  \"is_active\": \"0\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/berkahkayujaya/api/authapi/update/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"berkahkayujaya",
+						"api",
+						"authapi",
+						"update",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mengedit Data Pesanan Kayu",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"tanggal_pesankayu\": \"2025-01-16\",\r\n  \"alamat_pesanan\": \"Kota Sumedang\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/berkahkayujaya/api/pesanankayuapi/update/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"berkahkayujaya",
+						"api",
+						"pesanankayuapi",
+						"update",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Menghapus Data Pesanan Kayu",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/berkahkayujaya/api/pesanankayuapi/delete/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"berkahkayujaya",
+						"api",
+						"pesanankayuapi",
+						"delete",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Menghapus Data User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/berkahkayujaya/api/authapi/delete/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"berkahkayujaya",
+						"api",
+						"authapi",
+						"delete",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Menghapus Data Kayu",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/berkahkayujaya/api/kayuapi/delete/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"berkahkayujaya",
+						"api",
+						"kayuapi",
+						"delete",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Menampilkan Data Kayu List with search and paginate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/berkahkayujaya/api/kayuapi/list?page=1&search=Kayu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"berkahkayujaya",
+						"api",
+						"kayuapi",
+						"list"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "search",
+							"value": "Kayu"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Menampilkan Data User List with search and paginate Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/berkahkayujaya/api/authapi/list?page=1&search=admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"berkahkayujaya",
+						"api",
+						"authapi",
+						"list"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "search",
+							"value": "admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Menampilkan Data Pesanan Kayu List with search and paginate",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/berkahkayujaya/api/pesanankayuapi/list?page=1&search=itadori",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"berkahkayujaya",
+						"api",
+						"pesanankayuapi",
+						"list"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "search",
+							"value": "itadori"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
